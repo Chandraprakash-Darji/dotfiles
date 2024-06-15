@@ -1,21 +1,22 @@
-return {
-  {
-    "nvimtools/none-ls-extras.nvim",
-  },
-  {
-    "nvimtools/none-ls.nvim",
-    config = function()
-      local null_ls = require("null-ls")
-      null_ls.setup({
-        sources = {
-          null_ls.builtins.formatting.stylua,
-          null_ls.builtins.formatting.prettier,
-          require("none-ls.formatting.eslint"),
-          require("none-ls.diagnostics.eslint"),
-        },
-      })
+if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
-      vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
-    end,
-  },
+-- Customize None-ls sources
+
+---@type LazySpec
+return {
+  "nvimtools/none-ls.nvim",
+  opts = function(_, config)
+    -- config variable is the default configuration table for the setup function call
+    -- local null_ls = require "null-ls"
+
+    -- Check supported formatters and linters
+    -- https://github.com/nvimtools/none-ls.nvim/tree/main/lua/null-ls/builtins/formatting
+    -- https://github.com/nvimtools/none-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
+    config.sources = {
+      -- Set a formatter
+      -- null_ls.builtins.formatting.stylua,
+      -- null_ls.builtins.formatting.prettier,
+    }
+    return config -- return final config table
+  end,
 }
