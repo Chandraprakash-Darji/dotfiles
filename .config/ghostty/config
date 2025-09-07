@@ -1,0 +1,10 @@
+# Run `ghostty +show-config --default --docs` to view a list of
+font-family = 'FiraCode Nerd Font'
+window-padding-x = 10
+window-padding-x = 10	
+resize-overlay-duration = 4s 200ms
+theme = Builtin Pastel Dark
+background-blur = true
+background-opacity = .60
+macos-titlebar-style = tabs
+keybind = global:cmd++shift+\=toggle_quick_terminal

@@ -5,6 +5,7 @@
 
 !.config/nvim/**/*
 !.config/nvim/lua/config/plugins/**/*
+!.config/ghostty/config
 !README.md
 !.gitignore
 !.zshrc
