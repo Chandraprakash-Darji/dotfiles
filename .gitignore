@@ -1,0 +1,11 @@
+
+*
+
+
+
+!.config/nvim/**/*
+!.config/nvim/lua/config/plugins/**/*
+!README.md
+!.gitignore
+!.zshrc
+!.p10k.zsh
