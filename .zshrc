@@ -136,3 +136,5 @@ case ":$PATH:" in
 esac
 # pnpm end
 export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
+
+. "$HOME/.local/bin/env"
