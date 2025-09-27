@@ -3,8 +3,8 @@ font-family = 'FiraCode Nerd Font'
 window-padding-x = 10
 window-padding-x = 10	
 resize-overlay-duration = 4s 200ms
-theme = Builtin Pastel Dark
+theme = /Users/rega/.cache/wal/colors-ghostty
 background-blur = true
-background-opacity = .60
+background-opacity = .75
 macos-titlebar-style = tabs
-keybind = global:cmd++shift+\=toggle_quick_terminal
+background-blur-radius = 40

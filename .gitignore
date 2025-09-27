@@ -3,9 +3,15 @@
 
 
 
-!.config/nvim/**/*
+!.config/nvim
 !.config/nvim/lua/config/plugins/**/*
 !.config/ghostty/config
+!.config/ghostty/config
+!.config/firefox/**/*
+!.config/sketchybar/**/*
+!.config/skhd/**/*
+!.config/wal/**/*
+!.config/yabai/**/*
 !README.md
 !.gitignore
 !.zshrc
