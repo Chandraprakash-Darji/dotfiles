@@ -1,3 +1,5 @@
+local is_neovide = vim.g.is_neovide or false
+
 return {
   -- cold
   {
@@ -5,14 +7,14 @@ return {
     name = "catppuccin",
     lazy = false,
     priority = 1000,
-    opts = { transparent_background = true },
+    opts = { transparent_background = not is_neovide },
   },
   -- white
   {
     "scottmckendry/cyberdream.nvim",
     lazy = false,
     priority = 1000,
-    opts = { transparent = true },
+    opts = { transparent = not is_neovide },
   },
   -- warm
   {
@@ -21,8 +23,8 @@ return {
     priority = 1000,
     opts = {
       transparent = {
-        bg = true,
-        float = true,
+        bg = not is_neovide,
+        float = not is_neovide,
       },
     },
   },
@@ -34,7 +36,7 @@ return {
     priority = 1000,
     opts = {
       styles = {
-        transparency = true,
+        transparency = not is_neovide,
       },
     },
   },
@@ -44,7 +46,7 @@ return {
     lazy = false,
     priority = 1000,
     opts = {
-      transparent_background = true,
+      transparent_background = not is_neovide,
     },
   },
   -- blue
@@ -53,25 +55,17 @@ return {
     lazy = false,
     priority = 1000,
     opts = {
-      transparent = true,
+      transparent = not is_neovide,
       styles = {
-        sidebars = "transparent",
-        floats = "transparent",
+        sidebars = is_neovide and "" or "transparent",
+        floats = is_neovide and "" or "transparent",
       },
     },
   },
   {
-    "uZer/pywal16.nvim",
-    -- for local dev replace with:
-    -- dir = '~/your/path/pywal16.nvim',
-    config = function()
-      vim.cmd.colorscheme("pywal16")
-    end,
-  },
-  {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "cyberdream",
+      colorscheme = "rose-pine",
     },
   },
 }
