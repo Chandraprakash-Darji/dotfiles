@@ -139,3 +139,17 @@ export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
 
 . "$HOME/.local/bin/env"
 eval "$(starship init zsh)"
+
+export PATH=$PATH:$HOME/go/bin
+export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/rega/.lmstudio/bin"
+# End of LM Studio CLI section
+
+export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
+
+# Added by Antigravity
+export PATH="/Users/rega/.antigravity/antigravity/bin:$PATH"
+export PATH="/opt/homebrew/opt/postgresql@18/bin:$PATH"
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
