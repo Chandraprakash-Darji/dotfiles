@@ -153,3 +153,14 @@ export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
 export PATH="/Users/rega/.antigravity/antigravity/bin:$PATH"
 export PATH="/opt/homebrew/opt/postgresql@18/bin:$PATH"
 export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+
+# bun completions
+[ -s "/Users/rega/.bun/_bun" ] && source "/Users/rega/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

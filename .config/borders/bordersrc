@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Source pywal colors
+source "$HOME/.cache/wal/colors.sh"
+
+# You can pick any of the colors defined in colors.sh
+# For example:
+# background
+# foreground
+# color0 ... color15
+
+options=(
+  style=round
+  width=6.0
+  hidpi=off
+
+  # Use pywal colors dynamically
+  active_color=0xc0${color6//\#/} # remove '#' and prepend alpha (0xc0 = ~75% opacity)
+  inactive_color=0xc0${color1//\#/}
+  background_color=0x30${background//\#/} # background with ~20% opacity
+)
+
+borders "${options[@]}"
