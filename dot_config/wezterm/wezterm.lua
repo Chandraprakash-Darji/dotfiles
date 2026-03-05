@@ -9,54 +9,7 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
--- Watch the pywal colors file for changes and reload wezterm config when it changes
-wezterm.add_to_config_reload_watch_list(os.getenv("HOME") .. "/.cache/wal")
-
--- Import colors from pywal generated file
-local colors = dofile(os.getenv("HOME") .. "/.cache/wal/colors-wezterm.lua")
-
--- This is where you actually apply your config choices
-config.colors = {
-	foreground = colors.foreground,
-	background = colors.background,
-	cursor_bg = colors.cursor,
-	cursor_border = colors.cursor,
-	cursor_fg = colors.background,
-	selection_bg = colors.foreground,
-	selection_fg = colors.background,
-	ansi = colors.ansi,
-	brights = colors.brights,
-	-- Tab bar color customizations (use pywal colors with fallbacks)
-	tab_bar = {
-		background = colors.background or "#1e1e1e",
-		inactive_tab_edge = colors.background or "#1e1e1e",
-
-		active_tab = {
-			bg_color = colors.cursor or (colors.ansi and colors.ansi[4]) or "#4a4a4a",
-			fg_color = colors.foreground or "#ffffff",
-		},
-
-		inactive_tab = {
-			bg_color = colors.background or "#1e1e1e",
-			fg_color = colors.foreground or "#a0a0a0",
-		},
-
-		inactive_tab_hover = {
-			bg_color = colors.selection_bg or ((colors.ansi and colors.ansi[7]) or "#333333"),
-			fg_color = colors.selection_fg or "#ffffff",
-		},
-
-		new_tab = {
-			bg_color = colors.background or "#1e1e1e",
-			fg_color = (colors.brights and colors.brights[7]) or "#a0a0a0",
-		},
-
-		new_tab_hover = {
-			bg_color = colors.cursor or "#4a4a4a",
-			fg_color = colors.foreground or "#ffffff",
-		},
-	},
-}
+config.color_scheme = 'tokyonight_night'
 
 -- This is where you actually apply your config choices
 config.max_fps = 144
@@ -180,6 +133,27 @@ local function tab_title(tab_info)
 	-- in that tab
 	return tab_info.active_pane.title
 end
+
+-- Attempt to retrieve the active color scheme's foreground/background
+local function get_scheme_colors(name)
+	local schemes = {}
+	if wezterm.color and wezterm.color.get_builtin_schemes then
+		schemes = wezterm.color.get_builtin_schemes()
+	elseif wezterm.get_builtin_color_schemes then
+		schemes = wezterm.get_builtin_color_schemes()
+	end
+
+	local scheme = schemes[name or config.color_scheme] or {}
+	local bg = scheme.background or (scheme.colors and scheme.colors.background)
+	local fg = scheme.foreground or (scheme.colors and scheme.colors.foreground)
+
+	return {
+		background = bg or "#1e1e1e",
+		foreground = fg or "#ffffff",
+	}
+end
+
+local colors = get_scheme_colors(config.color_scheme)
 
 wezterm.on("format-tab-title", function(tab, _, _, _, hover, max_width)
 	local edge_background = colors.background or "#1e1e1e"

@@ -1,0 +1,33 @@
+[user]
+email = 93640141+Chandraprakash-Darji@users.noreply.github.com
+name = Chandraprakash-Darji
+
+[core]
+excludesfile = ~/.gitignore
+
+[init]
+defaultBranch = main
+
+[rebase]
+autoSquash = true
+
+[push]
+default = current
+
+[pull]
+rebase = true
+
+[filter "lfs"]
+clean = git-lfs clean %f
+smudge = git-lfs smudge %f
+required = true
+
+[alias]
+b = "!git --no-pager branch --verbose --verbose"
+t = "!git --no-pager tag"
+r = "!git --no-pager remote"
+s = "!git --no-pager status --short --branch --untracked-files=normal"
+l = "!git --no-pager log -20 --oneline"
+ll = "!git log --oneline"
+co = "!git checkout"
+amend = "!git commit --amend --no-edit"
