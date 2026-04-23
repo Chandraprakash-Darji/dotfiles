@@ -86,6 +86,8 @@ install_brew_packages() {
     postgresql@18
     node@24
     oven-sh/bun/bun
+    yazi
+    ollama
   )
 
   log "Installing Homebrew packages"
