@@ -65,9 +65,12 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="/opt/homebrew/opt/postgresql@18/bin:$PATH"
 export PATH="/opt/homebrew/opt/node@24/bin:$PATH"
 
+# VS Code CLI
+VSCODE_BIN="/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+case ":$PATH:" in
+  *":$VSCODE_BIN:"*) ;;
+  *) export PATH="$VSCODE_BIN:$PATH" ;;
+esac
+
 # Added by Antigravity
 export PATH="/Users/rega/.antigravity/antigravity/bin:$PATH"
-
-
-# omnara
-path=("/Users/rega/.omnara/bin" $path)

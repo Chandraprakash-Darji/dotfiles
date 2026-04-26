@@ -327,7 +327,11 @@ workspace_names = [
 #       ]
 #
 # By default there are no app rules; add or uncomment rules below as needed.
-app_rules = []
+app_rules = [
+   { app_name = "QuickTime Player",  floating = true },
+   { app_name = "VLC",  floating = true },
+   { app_name = "Finder",  floating = true },
+]
 
 # Modifier combinations that can be reused in key bindings
 # Define common modifier combinations to avoid repetition.
@@ -406,15 +410,16 @@ comb1 = "Alt + Shift"
 "Alt + Tab" = "switch_to_last_workspace"
 
 # commands to change the layout engine of the active workspace
-# "Alt + Ctrl + 1" = { set_workspace_layout = { mode = "traditional" } }
-# "Alt + Ctrl + 2" = { set_workspace_layout = { mode = "bsp" } }
-# "Alt + Ctrl + 3" = { set_workspace_layout = { mode = "master_stack" } }
-# "Alt + Ctrl + 4" = { set_workspace_layout = { mode = "scrolling" } }
+"Alt + Ctrl + 1" = { set_workspace_layout = { mode = "traditional" } }
+"Alt + Ctrl + 2" = { set_workspace_layout = { mode = "bsp" } }
+"Alt + Ctrl + 3" = { set_workspace_layout = { mode = "stack" } }
+"Alt + Ctrl + 4" = { set_workspace_layout = { mode = "master_stack" } }
+"Alt + Ctrl + 5" = { set_workspace_layout = { mode = "scrolling" } }
 
-"Alt + Shift + Left" = { join_window = "left" }
-"Alt + Shift + Right" = { join_window = "right" }
-"Alt + Shift + Up" = { join_window = "up" }
-"Alt + Shift + Down" = { join_window = "down" }
+# "Alt + Shift + Left" = { join_window = "left" }
+# "Alt + Shift + Right" = { join_window = "right" }
+# "Alt + Shift + Up" = { join_window = "up" }
+# "Alt + Shift + Down" = { join_window = "down" }
 "Alt + Comma" = "toggle_stack"
 "Alt + Slash" = "toggle_orientation"
 "Alt + Ctrl + E" = "unjoin_windows"
@@ -449,7 +454,7 @@ comb1 = "Alt + Shift"
 # this will show the mission control view shown in the readme
 "Alt + Ctrl + M" = "show_mission_control_all"
 
-"Alt + Enter" = { "exec" = ["/bin/bash", "-c", "open -a \"/System/Applications/Utilities/Terminal.app\""] }
+# "Alt + Enter" = { "exec" = ["/bin/bash", "-c", "open -a \"/System/Applications/Utilities/Terminal.app\""] }
 
 "Alt + Shift + D" = "debug" # prints layout tree
 
