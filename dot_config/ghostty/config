@@ -1,16 +1,15 @@
 # Run `ghostty +show-config --default --docs` to view a list of
 font-family = 'FiraCode Nerd Font'
-window-padding-x = 0
-window-padding-x = 0	
+window-padding-x = 5
+window-padding-y = 5
 resize-overlay-duration = 4s 200ms
-# theme = /Users/rega/.cache/wal/colors-ghostty
-theme= TokyoNight Night
+theme = /Users/rega/.cache/wal/colors-ghostty
+# theme= TokyoNight Night
 background-blur = true
-background-opacity = .60
+background-opacity = .90
 macos-titlebar-style = tabs
-background-blur-radius = 80
+background-blur-radius = 25
 macos-option-as-alt = true
 mouse-hide-while-typing = true
-font-size=12
-window-decoration = false
+font-size=18
 macos-titlebar-style = hidden
