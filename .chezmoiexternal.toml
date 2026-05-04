@@ -1,0 +1,5 @@
+[".local/bin/tmux-sessionizer"]
+type = "file"
+url = "https://raw.githubusercontent.com/ThePrimeagen/tmux-sessionizer/master/tmux-sessionizer"
+executable = true
+refreshPeriod = "168h"

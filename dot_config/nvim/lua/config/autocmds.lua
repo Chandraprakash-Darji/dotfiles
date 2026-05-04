@@ -5,3 +5,17 @@
 --
 -- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
+
+local lsp_keymaps = vim.api.nvim_create_augroup("user_lsp_keymaps", { clear = true })
+
+vim.api.nvim_create_autocmd("LspAttach", {
+  group = lsp_keymaps,
+  callback = function(args)
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    if not client or not client:supports_method(vim.lsp.protocol.Methods.textDocument_hover, args.buf) then
+      return
+    end
+
+    vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = args.buf, desc = "Hover" })
+  end,
+})

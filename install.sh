@@ -71,6 +71,7 @@ install_brew_packages() {
   local packages=(
     git
     curl
+    tmux
     eza
     fzf
     lazygit

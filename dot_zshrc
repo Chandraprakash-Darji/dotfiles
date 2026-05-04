@@ -11,6 +11,8 @@ else
   export EDITOR='nvim'
 fi
 
+export PATH="$HOME/.local/bin:$PATH"
+
 source $ZSH/oh-my-zsh.sh
 
 alias code="code"
@@ -30,6 +32,9 @@ alias gs="git status -s"
 alias gc="()git commit -m $1"
 alias lg="lazygit"
 alias yz="yazi"
+
+bindkey -s ^f "tmux-sessionizer\n"
+
 nf() {
   local file
   file=$(fzf)
