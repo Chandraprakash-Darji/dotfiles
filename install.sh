@@ -72,6 +72,7 @@ install_brew_packages() {
     git
     curl
     tmux
+    nikitabobko/tap/aerospace
     eza
     fzf
     lazygit

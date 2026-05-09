@@ -1,0 +1,63 @@
+config-version = 2
+
+start-at-login = true
+
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+
+accordion-padding = 0
+default-root-container-layout = "tiles"
+default-root-container-orientation = "auto"
+
+on-focused-monitor-changed = ["move-mouse monitor-lazy-center"]
+persistent-workspaces = ["1", "2", "3", "4"]
+
+[key-mapping]
+preset = "qwerty"
+
+[gaps]
+inner.horizontal = 10
+inner.vertical = 10
+outer.left = 8
+outer.right = 8
+outer.top = 8
+outer.bottom = 8
+
+[mode.main.binding]
+ctrl-alt-1 = "workspace 1"
+ctrl-alt-2 = "workspace 2"
+ctrl-alt-3 = "workspace 3"
+ctrl-alt-4 = "workspace 4"
+
+alt-j = "focus left"
+alt-k = "focus down"
+alt-l = "focus up"
+alt-semicolon = "focus right"
+
+alt-h = "focus dfs-prev"
+alt-quote = "focus dfs-next"
+
+alt-shift-f = "fullscreen"
+alt-f = "layout tiles accordion"
+
+alt-shift-j = "move left"
+alt-shift-k = "move down"
+alt-shift-l = "move up"
+alt-shift-semicolon = "move right"
+
+alt-shift-s = "layout horizontal vertical"
+
+cmd-alt-1 = "move-node-to-workspace 1"
+cmd-alt-2 = "move-node-to-workspace 2"
+cmd-alt-3 = "move-node-to-workspace 3"
+cmd-alt-4 = "move-node-to-workspace 4"
+
+ctrl-shift-1 = "move-node-to-workspace --focus-follows-window 1"
+ctrl-shift-2 = "move-node-to-workspace --focus-follows-window 2"
+ctrl-shift-3 = "move-node-to-workspace --focus-follows-window 3"
+ctrl-shift-4 = "move-node-to-workspace --focus-follows-window 4"
+
+alt-shift-p = "move-node-to-workspace --focus-follows-window prev"
+alt-shift-n = "move-node-to-workspace --focus-follows-window next"
+
+alt-tab = "workspace-back-and-forth"
