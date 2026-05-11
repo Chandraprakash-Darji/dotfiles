@@ -10,7 +10,7 @@ default-root-container-layout = "tiles"
 default-root-container-orientation = "auto"
 
 on-focused-monitor-changed = ["move-mouse monitor-lazy-center"]
-persistent-workspaces = ["1", "2", "3", "4"]
+persistent-workspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
 [key-mapping]
 preset = "qwerty"
@@ -24,10 +24,25 @@ outer.top = 8
 outer.bottom = 8
 
 [mode.main.binding]
-ctrl-alt-1 = "workspace 1"
-ctrl-alt-2 = "workspace 2"
-ctrl-alt-3 = "workspace 3"
-ctrl-alt-4 = "workspace 4"
+alt-1 = "workspace 1"
+alt-2 = "workspace 2"
+alt-3 = "workspace 3"
+alt-4 = "workspace 4"
+alt-5 = "workspace 5"
+alt-6 = "workspace 6"
+alt-7 = "workspace 7"
+alt-8 = "workspace 8"
+alt-9 = "workspace 9"
+
+ctrl-alt-1 = "move-node-to-workspace 1"
+ctrl-alt-2 = "move-node-to-workspace 2"
+ctrl-alt-3 = "move-node-to-workspace 3"
+ctrl-alt-4 = "move-node-to-workspace 4"
+ctrl-alt-5 = "move-node-to-workspace 5"
+ctrl-alt-6 = "move-node-to-workspace 6"
+ctrl-alt-7 = "move-node-to-workspace 7"
+ctrl-alt-8 = "move-node-to-workspace 8"
+ctrl-alt-9 = "move-node-to-workspace 9"
 
 alt-j = "focus left"
 alt-k = "focus down"
@@ -46,11 +61,6 @@ alt-shift-l = "move up"
 alt-shift-semicolon = "move right"
 
 alt-shift-s = "layout horizontal vertical"
-
-cmd-alt-1 = "move-node-to-workspace 1"
-cmd-alt-2 = "move-node-to-workspace 2"
-cmd-alt-3 = "move-node-to-workspace 3"
-cmd-alt-4 = "move-node-to-workspace 4"
 
 ctrl-shift-1 = "move-node-to-workspace --focus-follows-window 1"
 ctrl-shift-2 = "move-node-to-workspace --focus-follows-window 2"
