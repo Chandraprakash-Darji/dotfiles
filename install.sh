@@ -81,6 +81,8 @@ install_brew_packages() {
         lazygit
         gh
         ripgrep
+        fd
+        bat
         ghq
         starship
         neovim
@@ -120,6 +122,7 @@ install_brew_casks() {
         lm-studio
         font-fira-code-nerd-font
         kde-mac/kde/kdeconnect
+        zen@twilight
     )
 
     log "Installing Homebrew casks"

@@ -13,7 +13,7 @@ fish_add_path -g "$HOME/.antigravity/antigravity/bin"
 fish_add_path -g /opt/homebrew/opt/postgresql@18/bin
 fish_add_path -g /opt/homebrew/opt/node@24/bin
 fish_add_path -g "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
-fish_add_path -g "$HOME/opt/homebrew/bin"
+fish_add_path -g /opt/homebrew/bin
 
 set -gx PNPM_HOME "$HOME/Library/pnpm"
 fish_add_path -g "$PNPM_HOME"
@@ -36,6 +36,7 @@ alias ga="git add ."
 alias gs="git status -s"
 alias lg="lazygit"
 alias yz="yazi"
+alias y="yazi"
 
 function tn
     tmux new -s $argv[1]

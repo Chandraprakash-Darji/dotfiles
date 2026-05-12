@@ -6,9 +6,15 @@ resize-overlay-duration = 4s 200ms
 # theme = /Users/rega/.cache/wal/colors-ghostty
 theme = TokyoNight Night
 background-blur = true
-background-opacity = .98
+background-opacity = .9
 background-blur-radius = 25
 macos-option-as-alt = true
 mouse-hide-while-typing = true
 font-size=18
 macos-titlebar-style = hidden
+
+# custom-shader = shaders/animated-gradient-shader.glsl
+# custom-shader = shaders/cursor_blaze.glsl
+# custom-shader = shaders/drunkard.glsl
+custom-shader = shaders/in-game-crt-cursor.glsl
+# custom-shader = shaders/tft.glsl
