@@ -83,7 +83,7 @@ esac
 # pnpm end
 
 eval "$(starship init zsh)"
-eval "$(zoxide init zsh --cmd cd)"
+eval "$(zoxide init zsh)"
 
 export PATH=$PATH:$HOME/go/bin
 

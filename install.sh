@@ -123,6 +123,8 @@ install_brew_casks() {
         font-fira-code-nerd-font
         kde-mac/kde/kdeconnect
         zen@twilight
+        karabiner-elements
+        keepingyouawake
     )
 
     log "Installing Homebrew casks"

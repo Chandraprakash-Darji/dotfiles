@@ -5,6 +5,7 @@ else
 end
 
 set -gx TERM xterm-256color
+set -U fish_greeting ""
 
 fish_add_path -g "$HOME/.local/bin"
 fish_add_path -g "$HOME/go/bin"
@@ -54,7 +55,7 @@ end
 function fish_title
     set -l dir (string replace -r "^$HOME" "~" "$PWD")
 
-    if test "$dir" = "~"; or test "$dir" = "/"
+    if test "$dir" = "~"; or test "$dir" = /
         echo "$dir"
         return
     end
@@ -62,7 +63,7 @@ function fish_title
     set -l current (basename "$dir")
     set -l parent (basename (dirname "$dir"))
 
-    if test -z "$parent"; or test "$parent" = "/"
+    if test -z "$parent"; or test "$parent" = /
         echo "$current"
     else
         echo "$parent/$current"
@@ -77,6 +78,6 @@ if status is-interactive
     end
 
     if command -q zoxide
-        zoxide init fish --cmd cd | source
+        zoxide init fish | source
     end
 end
