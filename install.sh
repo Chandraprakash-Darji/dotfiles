@@ -125,6 +125,7 @@ install_brew_casks() {
         zen@twilight
         karabiner-elements
         keepingyouawake
+        pearcleaner
     )
 
     log "Installing Homebrew casks"
