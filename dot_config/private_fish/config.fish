@@ -36,6 +36,7 @@ alias pd="pnpm dev"
 alias ga="git add ."
 alias gs="git status -s"
 alias lg="lazygit"
+alias gz="git cz"
 alias yz="yazi"
 alias y="yazi"
 

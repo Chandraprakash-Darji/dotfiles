@@ -126,6 +126,7 @@ install_brew_casks() {
         karabiner-elements
         keepingyouawake
         pearcleaner
+        tablepro
     )
 
     log "Installing Homebrew casks"
