@@ -74,7 +74,6 @@ install_brew_packages() {
         chezmoi
         fish
         tmux
-        nikitabobko/tap/aerospace
         eza
         fzf
         zoxide
@@ -187,6 +186,54 @@ install_zsh_plugins() {
     clone_or_pull_repo "https://github.com/zsh-users/zsh-autosuggestions.git" "$HOME/.zsh/zsh-autosuggestions"
 }
 
+setup_rust_toolchain() {
+    if has_cmd cargo && has_cmd rustc; then
+        log "Rust toolchain already installed"
+    else
+        log "Installing Rust toolchain"
+        curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+    fi
+
+    if [[ -f "$HOME/.cargo/env" ]]; then
+        # Needed so cargo is available to the rest of this script immediately.
+        # shellcheck disable=SC1090
+        . "$HOME/.cargo/env"
+    fi
+}
+
+setup_rift() {
+    local repo_url="https://github.com/Chandraprakash-Darji/rift"
+    local repo_dir
+
+    if ! has_cmd ghq; then
+        log "ghq is required to set up Rift"
+        return 1
+    fi
+
+    log "Fetching Rift source with ghq"
+    ghq get "$repo_url"
+
+    repo_dir="$(ghq list -p Chandraprakash-Darji/rift | head -n 1)"
+    if [[ -z "$repo_dir" || ! -d "$repo_dir" ]]; then
+        log "Unable to locate Rift repo after ghq get"
+        return 1
+    fi
+
+    setup_rust_toolchain
+
+    log "Installing Rift launch service"
+    (
+        cd "$repo_dir"
+        cargo run --bin rift --release service install
+        cargo run --bin rift --release service start
+    )
+
+    if has_cmd chezmoi; then
+        log "Applying Rift config"
+        chezmoi apply "$HOME/.config/rift/config.toml"
+    fi
+}
+
 setup_node_tooling() {
     local prefix
     prefix="$(brew --prefix)"
@@ -260,6 +307,7 @@ main() {
     ensure_oh_my_zsh
     install_zsh_plugins
     install_fira_code_iscript_font
+    setup_rift
     setup_node_tooling
     setup_bun
     setup_postgresql_path

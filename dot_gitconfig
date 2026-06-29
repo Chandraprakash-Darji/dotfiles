@@ -18,9 +18,10 @@ default = current
 rebase = true
 
 [filter "lfs"]
-clean = git-lfs clean %f
-smudge = git-lfs smudge %f
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
 required = true
+	process = git-lfs filter-process
 
 [alias]
 b = "!git --no-pager branch --verbose --verbose"
@@ -31,3 +32,4 @@ l = "!git --no-pager log -20 --oneline"
 ll = "!git log --oneline"
 co = "!git checkout"
 amend = "!git commit --amend --no-edit"
+	cz = !cz

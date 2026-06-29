@@ -318,7 +318,10 @@ if [[ ! -z $session_cmd ]]; then
 elif [[ ! -z $user_selected ]]; then
     selected="$user_selected"
 else
-    selected=$(find_dirs | fzf)
+    selected=$(find_dirs | fzf \
+        --prompt="  session > " \
+        --preview 'echo {} | grep -q "^\[TMUX\]" && tmux list-windows -t "$(echo {} | sed "s/\[TMUX\] //")" 2>/dev/null || eza -1 --icons --color=always --group-directories-first {} 2>/dev/null || ls {}' \
+        --preview-window=right:40%)
 fi
 
 if [[ -z $selected ]]; then

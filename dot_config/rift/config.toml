@@ -64,6 +64,18 @@ run_on_start = []
 # - If false, your config changes will only apply when restarting rift.
 hot_reload = true
 
+# Todo Mode
+# - Pin a chosen app as a sidebar on the right of the primary display. While
+#   enabled, all other tiling on the primary display treats the screen as
+#   shrunk by `sidebar_width`. Outer top/bottom/right gaps are applied as padding.
+# - Toggle via the menu bar ("Todo" submenu) or the `toggle_todo_mode` keybind.
+#   Force a re-layout via `reflow_todo`.
+[settings.todo_mode]
+enabled = true
+app_id = "net.kovidgoyal.kitty"
+app_name = "kitty"
+sidebar_width = 600.0
+
 [settings.layout]
 # Layout Types:
 # 	- "traditional" (i3/sway-like containers)
@@ -328,6 +340,9 @@ workspace_names = [
 #
 # By default there are no app rules; add or uncomment rules below as needed.
 app_rules = [
+   { app_name = "System Settings",  floating = true },
+   { app_name = "Calculator",  floating = true },
+   { app_name = "Karabiner-Elements",  floating = true },
    { app_name = "QuickTime Player",  floating = true },
    { app_name = "VLC",  floating = true },
    { app_name = "Finder",  floating = true },
@@ -383,8 +398,6 @@ comb1 = "Alt + Shift"
 # - scroll_strip = { delta = 0.5 }
 # - snap_strip / center_selection
 
-"Alt + Z" = "toggle_space_activated"
-
 "Alt + H" = { move_focus = "left" }
 "Alt + J" = { move_focus = "down" }
 "Alt + K" = { move_focus = "up" }
@@ -424,6 +437,7 @@ comb1 = "Alt + Shift"
 "Alt + Slash" = "toggle_orientation"
 "Alt + Ctrl + E" = "unjoin_windows"
 
+"Alt + Shift + Z" = "toggle_window_floating"
 "Alt + Shift + Space" = "toggle_window_floating"
 "Alt + F" = "toggle_fullscreen"
 "Alt + Shift + F" = "toggle_fullscreen_within_gaps"
@@ -454,9 +468,18 @@ comb1 = "Alt + Shift"
 # this will show the mission control view shown in the readme
 "Alt + Ctrl + M" = "show_mission_control_all"
 
-# "Ctrl + Enter" = { "exec" = ["/bin/bash", "-c", "open -a \"/System/Applications/Utilities/Terminal.app\""] }
+# App launchers
+"Ctrl + Return"         = { exec = ["/bin/bash", "-c", "osascript -e 'tell application \"Ghostty\" to activate' -e 'tell application \"System Events\" to keystroke \"t\" using command down'"] }
+"Ctrl + Shift + Z"      = { exec = ["/bin/bash", "-c", "open -a 'Twilight'"] }
+"Ctrl + Shift + V"      = { exec = ["/bin/bash", "-c", "open -a 'Visual Studio Code'"] }
+"Ctrl + Shift + E"      = { exec = ["/bin/bash", "-c", "open -a 'Zed'"] }
+"Ctrl + Shift + F"      = { exec = ["/bin/bash", "-c", "open -a 'Finder'"] }
 
 "Alt + Shift + D" = "debug" # prints layout tree
 
 "Alt + Ctrl + S" = "serialize"
 "Alt + Ctrl + Q" = "save_and_exit"
+
+# Todo mode
+"Alt + Ctrl + T" = "toggle_todo_mode"
+"Alt + Ctrl + R" = "reflow_todo"
