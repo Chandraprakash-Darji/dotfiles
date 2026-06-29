@@ -124,6 +124,7 @@ install_brew_casks() {
         zen@twilight
         karabiner-elements
         keepingyouawake
+        raycast
         pearcleaner
         tablepro
     )

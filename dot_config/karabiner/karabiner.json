@@ -1,0 +1,296 @@
+{
+  "global": {
+    "show_in_menu_bar": false
+  },
+  "profiles": [
+    {
+      "name": "Default profile",
+      "selected": true,
+      "complex_modifications": {
+        "rules": [
+          {
+            "description": "Right Command → Hyper (✦ = ⌘⌃⌥⇧)",
+            "manipulators": [
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "right_command",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "left_shift",
+                    "modifiers": [
+                      "left_command",
+                      "left_control",
+                      "left_option"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "description": "✦O → Open Camera (Raycast)",
+            "manipulators": [
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "o",
+                  "modifiers": {
+                    "mandatory": [
+                      "left_command",
+                      "left_control",
+                      "left_option",
+                      "left_shift"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open 'raycast-x://extensions/raycast/raycast/open-camera'"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "description": "✦P → Pick Color (Raycast)",
+            "manipulators": [
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "p",
+                  "modifiers": {
+                    "mandatory": [
+                      "left_command",
+                      "left_control",
+                      "left_option",
+                      "left_shift"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open 'raycast-x://extensions/thomas/color-picker/pick-color'"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "description": "⌘⇧L → Lock screen",
+            "manipulators": [
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "l",
+                  "modifiers": {
+                    "mandatory": [
+                      "command",
+                      "shift"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "q",
+                    "modifiers": [
+                      "left_control",
+                      "left_command"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "description": "⌘E → Open Finder",
+            "manipulators": [
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "e",
+                  "modifiers": {
+                    "mandatory": [
+                      "command"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open ~"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "description": "⇧⌘V → Clipboard History (Raycast)",
+            "manipulators": [
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "v",
+                  "modifiers": {
+                    "mandatory": [
+                      "command",
+                      "shift"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open 'raycast://extensions/raycast/clipboard-history/clipboard-history'"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "description": "⌥N → Raycast Notes",
+            "manipulators": [
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "n",
+                  "modifiers": {
+                    "mandatory": [
+                      "option"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open 'raycast://extensions/raycast/raycast-notes/raycast-notes'"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "description": "⌥D → Open Downloads",
+            "manipulators": [
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "d",
+                  "modifiers": {
+                    "mandatory": [
+                      "option"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open ~/Downloads"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "description": "✦C → Confetti (Raycast)",
+            "manipulators": [
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "c",
+                  "modifiers": {
+                    "mandatory": [
+                      "left_command",
+                      "left_control",
+                      "left_option",
+                      "left_shift"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open 'raycast-x://extensions/raycast/raycast/confetti'"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "description": "⌥S → Open Slack",
+            "manipulators": [
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "s",
+                  "modifiers": {
+                    "mandatory": [
+                      "option"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -a 'Slack'"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "description": "✦N → New timestamped note in Neovim (Ghostty)",
+            "manipulators": [
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "n",
+                  "modifiers": {
+                    "mandatory": [
+                      "left_command",
+                      "left_control",
+                      "left_option",
+                      "left_shift"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "mkdir -p ~/Desktop/p/notes && open -na Ghostty --args -e /opt/homebrew/bin/nvim ~/Desktop/p/notes/$(date +%d-%m-%Y-%H-%M).md"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "description": "✦E → Open elregaldo.com portfolio in VSCode",
+            "manipulators": [
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "e",
+                  "modifiers": {
+                    "mandatory": [
+                      "left_command",
+                      "left_control",
+                      "left_option",
+                      "left_shift"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -a 'Visual Studio Code' ~/ghq/github.com/Chandraprakash-Darji/portfolio"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "virtual_hid_keyboard": {
+        "keyboard_type_v2": "ansi"
+      }
+    }
+  ]
+}
