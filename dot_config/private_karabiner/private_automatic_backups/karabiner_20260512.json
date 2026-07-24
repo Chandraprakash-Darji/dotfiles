@@ -1,0 +1,112 @@
+{
+  "global": {
+    "show_in_menu_bar": false
+  },
+  "profiles": [
+    {
+      "name": "Default",
+      "selected": true,
+      "complex_modifications": {
+        "parameters": {
+          "basic.to_if_alone_timeout_milliseconds": 200,
+          "basic.to_if_held_down_threshold_milliseconds": 200
+        },
+        "rules": [
+          {
+            "description": "Home Row Mods (QWERTY): A/S/D/F and J/K/L/;",
+            "manipulators": [
+              {
+                "description": "A -> Shift (left)",
+                "type": "basic",
+                "from": { "key_code": "a", "modifiers": { "optional": ["any"] } },
+                "to_if_held_down": [{ "key_code": "left_shift" }],
+                "to_if_alone": [{ "key_code": "a" }],
+                "parameters": {
+                  "basic.to_if_alone_timeout_milliseconds": 200,
+                  "basic.to_if_held_down_threshold_milliseconds": 200
+                }
+              },
+              {
+                "description": "S -> Ctrl (left)",
+                "type": "basic",
+                "from": { "key_code": "s", "modifiers": { "optional": ["any"] } },
+                "to_if_held_down": [{ "key_code": "left_control" }],
+                "to_if_alone": [{ "key_code": "s" }],
+                "parameters": {
+                  "basic.to_if_alone_timeout_milliseconds": 200,
+                  "basic.to_if_held_down_threshold_milliseconds": 200
+                }
+              },
+              {
+                "description": "D -> Option (left)",
+                "type": "basic",
+                "from": { "key_code": "d", "modifiers": { "optional": ["any"] } },
+                "to_if_held_down": [{ "key_code": "left_option" }],
+                "to_if_alone": [{ "key_code": "d" }],
+                "parameters": {
+                  "basic.to_if_alone_timeout_milliseconds": 200,
+                  "basic.to_if_held_down_threshold_milliseconds": 200
+                }
+              },
+              {
+                "description": "F -> Cmd (left)",
+                "type": "basic",
+                "from": { "key_code": "f", "modifiers": { "optional": ["any"] } },
+                "to_if_held_down": [{ "key_code": "left_command" }],
+                "to_if_alone": [{ "key_code": "f" }],
+                "parameters": {
+                  "basic.to_if_alone_timeout_milliseconds": 200,
+                  "basic.to_if_held_down_threshold_milliseconds": 200
+                }
+              },
+              {
+                "description": "J -> Cmd (right)",
+                "type": "basic",
+                "from": { "key_code": "j", "modifiers": { "optional": ["any"] } },
+                "to_if_held_down": [{ "key_code": "right_command" }],
+                "to_if_alone": [{ "key_code": "j" }],
+                "parameters": {
+                  "basic.to_if_alone_timeout_milliseconds": 200,
+                  "basic.to_if_held_down_threshold_milliseconds": 200
+                }
+              },
+              {
+                "description": "K -> Option (right)",
+                "type": "basic",
+                "from": { "key_code": "k", "modifiers": { "optional": ["any"] } },
+                "to_if_held_down": [{ "key_code": "right_option" }],
+                "to_if_alone": [{ "key_code": "k" }],
+                "parameters": {
+                  "basic.to_if_alone_timeout_milliseconds": 200,
+                  "basic.to_if_held_down_threshold_milliseconds": 200
+                }
+              },
+              {
+                "description": "L -> Ctrl (right)",
+                "type": "basic",
+                "from": { "key_code": "l", "modifiers": { "optional": ["any"] } },
+                "to_if_held_down": [{ "key_code": "right_control" }],
+                "to_if_alone": [{ "key_code": "l" }],
+                "parameters": {
+                  "basic.to_if_alone_timeout_milliseconds": 200,
+                  "basic.to_if_held_down_threshold_milliseconds": 200
+                }
+              },
+              {
+                "description": "; -> Shift (right)",
+                "type": "basic",
+                "from": { "key_code": "semicolon", "modifiers": { "optional": ["any"] } },
+                "to_if_held_down": [{ "key_code": "right_shift" }],
+                "to_if_alone": [{ "key_code": "semicolon" }],
+                "parameters": {
+                  "basic.to_if_alone_timeout_milliseconds": 200,
+                  "basic.to_if_held_down_threshold_milliseconds": 200
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
