@@ -74,7 +74,7 @@ hot_reload = true
 enabled = true
 app_id = "net.kovidgoyal.kitty"
 app_name = "kitty"
-sidebar_width = 600.0
+sidebar_width = 400.0
 
 [settings.layout]
 # Layout Types:
