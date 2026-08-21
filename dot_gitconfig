@@ -1,6 +1,6 @@
 [user]
 email = 93640141+Chandraprakash-Darji@users.noreply.github.com
-name = Chandraprakash-Darji
+name = Chandraprakash-Darji	
 
 [core]
 excludesfile = ~/.gitignore
@@ -33,3 +33,9 @@ ll = "!git log --oneline"
 co = "!git checkout"
 amend = "!git commit --amend --no-edit"
 	cz = !cz
+[credential "https://github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential

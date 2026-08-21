@@ -1,0 +1,77 @@
+[general]
+live_config_reload = true
+
+[window]
+padding = { x = 5, y = 5 }
+decorations = "Buttonless"
+opacity = 0.79
+blur = true
+option_as_alt = "Both"
+
+[scrolling]
+history = 20000
+
+[font]
+normal = { family = "FiraCode Nerd Font", style = "Regular" }
+size = 18.0
+
+[selection]
+save_to_clipboard = true
+
+[cursor]
+style = { shape = "Beam", blinking = "Never" }
+
+[terminal]
+shell = { program = "/opt/homebrew/bin/fish", args = ["--login"] }
+osc52 = "CopyPaste"
+
+[mouse]
+hide_when_typing = true
+
+[colors.primary]
+foreground = "#c0caf5"
+background = "#1a1b26"
+
+[colors.cursor]
+text = "#1a1b26"
+cursor = "#c0caf5"
+
+[colors.selection]
+text = "#1a1b26"
+background = "#c0caf5"
+
+[colors.footer_bar]
+foreground = "#c0caf5"
+background = "#414868"
+
+[colors.normal]
+black = "#15161e"
+red = "#f7768e"
+green = "#9ece6a"
+yellow = "#e0af68"
+blue = "#7aa2f7"
+magenta = "#bb9af7"
+cyan = "#7dcfff"
+white = "#a9b1d6"
+
+[colors.bright]
+black = "#414868"
+red = "#f7768e"
+green = "#9ece6a"
+yellow = "#e0af68"
+blue = "#7aa2f7"
+magenta = "#bb9af7"
+cyan = "#7dcfff"
+white = "#c0caf5"
+
+[keyboard]
+bindings = [
+  { key = "Enter", mods = "Command", action = "CreateNewWindow" },
+  { key = "T", mods = "Command", action = "CreateNewWindow" },
+  { key = "]", mods = "Command|Shift", action = "SelectNextTab" },
+  { key = "[", mods = "Command|Shift", action = "SelectPreviousTab" },
+  { key = "K", mods = "Command", action = "ClearHistory" },
+  { key = "K", mods = "Command", chars = "\u000c" },
+  { key = "Back", mods = "Command", chars = "\u0015" },
+  { key = "Delete", mods = "Command", chars = "\u0015" },
+]

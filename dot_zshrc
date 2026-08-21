@@ -106,3 +106,6 @@ case ":$PATH:" in
   *":$VSCODE_BIN:"*) ;;
   *) export PATH="$VSCODE_BIN:$PATH" ;;
 esac
+
+# Added by Antigravity CLI installer
+export PATH="/Users/rega/.local/bin:$PATH"

@@ -70,11 +70,11 @@ hot_reload = true
 #   shrunk by `sidebar_width`. Outer top/bottom/right gaps are applied as padding.
 # - Toggle via the menu bar ("Todo" submenu) or the `toggle_todo_mode` keybind.
 #   Force a re-layout via `reflow_todo`.
-[settings.todo_mode]
-enabled = true
-app_id = "net.kovidgoyal.kitty"
-app_name = "kitty"
-sidebar_width = 400.0
+# [settings.todo_mode]  (removed — no longer supported)
+# enabled = true
+# app_id = "net.kovidgoyal.kitty"
+# app_name = "kitty"
+# sidebar_width = 400.0
 
 [settings.layout]
 # Layout Types:
@@ -151,14 +151,14 @@ default_orientation = "perpendicular"
 #   Use the display's UUID as the key (for example, from system profiler or via rift CLI).
 
 [settings.layout.gaps.outer]
-top = 10
-left = 10
-bottom = 10
-right = 10
+top = 9
+left = 9
+bottom = 9
+right = 9
 
 [settings.layout.gaps.inner]
-horizontal = 10
-vertical = 10
+horizontal = 9
+vertical = 9
 
 # Example per-display overrides:
 # Replace the quoted key with your display's UUID. Only specify values you want to override.
@@ -178,8 +178,6 @@ enabled = true
 # if enabled, it will show all workspaces including empty ones. disabled because this
 # tends to take up too much room in the menubar and then is auto hidden by macos
 show_empty = false
-# when using layout display style, show app icons after the active workspace tile
-show_app_icons = true
 # choose between drawing every workspace or only the active workspace
 mode = "all"
 # when showing workspaces as labels ("index" or "name"), choose which label to render
@@ -423,6 +421,7 @@ comb1 = "Alt + Shift"
 "Alt + Tab" = "switch_to_last_workspace"
 
 # commands to change the layout engine of the active workspace
+"Alt + Ctrl + Space" = "toggle_space_activated"
 "Alt + Ctrl + 1" = { set_workspace_layout = { mode = "traditional" } }
 "Alt + Ctrl + 2" = { set_workspace_layout = { mode = "bsp" } }
 "Alt + Ctrl + 3" = { set_workspace_layout = { mode = "stack" } }
@@ -480,6 +479,7 @@ comb1 = "Alt + Shift"
 "Alt + Ctrl + S" = "serialize"
 "Alt + Ctrl + Q" = "save_and_exit"
 
-# Todo mode
-"Alt + Ctrl + T" = "toggle_todo_mode"
-"Alt + Ctrl + R" = "reflow_todo"
+# Todo mode (commands removed — TODO: update)
+# "Alt + Ctrl + T" = "toggle_todo_mode"
+# "Alt + Ctrl + R" = "reflow_todo"
+

@@ -7,6 +7,24 @@ end
 set -gx TERM xterm-256color
 set -U fish_greeting ""
 
+# Java JDK 8 (Zulu)
+set -gx JAVA_8_HOME /Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home
+set -gx JAVA_HOME $JAVA_8_HOME
+fish_add_path -g "$JAVA_HOME/bin"
+
+# Helper to switch Java versions: java8 / java17
+function java8
+    set -gx JAVA_HOME $JAVA_8_HOME
+    fish_add_path -g "$JAVA_HOME/bin"
+    echo "Switched to JDK 8: $JAVA_HOME"
+end
+
+function java17
+    set -gx JAVA_HOME /Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home
+    fish_add_path -g "$JAVA_HOME/bin"
+    echo "Switched to JDK 17: $JAVA_HOME"
+end
+
 fish_add_path -g "$HOME/.local/bin"
 fish_add_path -g "$HOME/go/bin"
 fish_add_path -g "$HOME/./antigravity/bin"
@@ -39,6 +57,8 @@ alias lg="lazygit"
 alias gz="git cz"
 alias yz="yazi"
 alias y="yazi"
+alias oc="opencode"
+alias oc2="opencode2"
 
 function tn
     tmux new -s $argv[1]
@@ -86,3 +106,7 @@ end
 # Added by OrbStack: command-line tools and integration
 # This won't be added again if you remove it.
 source ~/.orbstack/shell/init2.fish 2>/dev/null || :
+
+
+# Added by Antigravity CLI installer
+set -gx PATH "/Users/rega/.local/bin" $PATH
