@@ -2,9 +2,9 @@
 live_config_reload = true
 
 [window]
-padding = { x = 5, y = 5 }
-decorations = "Buttonless"
-opacity = 0.79
+padding = { x = 0, y = 0 }
+decorations = "None"
+opacity = 0.95
 blur = true
 option_as_alt = "Both"
 

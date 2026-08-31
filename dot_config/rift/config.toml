@@ -151,14 +151,14 @@ default_orientation = "perpendicular"
 #   Use the display's UUID as the key (for example, from system profiler or via rift CLI).
 
 [settings.layout.gaps.outer]
-top = 9
-left = 9
-bottom = 9
-right = 9
+top = 15
+left = 15
+bottom = 15
+right = 15
 
 [settings.layout.gaps.inner]
-horizontal = 9
-vertical = 9
+horizontal = 14
+vertical = 14
 
 # Example per-display overrides:
 # Replace the quoted key with your display's UUID. Only specify values you want to override.
