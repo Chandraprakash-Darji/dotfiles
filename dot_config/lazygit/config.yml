@@ -5,6 +5,12 @@ customCommands:
     context: "files"
     loadingText: "opening commitizen commit tool"
     output: terminal
+  - key: 'g'
+    context: 'files'
+    command: '$HOME/.local/bin/lazygit-ai-commit-message'
+    description: 'Generate AI commit subject from staged changes'
+    loadingText: 'Generating commit subject with OpenCode'
+    output: terminal
 
 gui:
   mouseEvents: false
